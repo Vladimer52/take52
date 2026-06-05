@@ -1,4 +1,5 @@
 from pathlib import Path
+from fastapi.responses import HTMLResponse, Response
 
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
@@ -29,13 +30,20 @@ async def index(request: Request):
             "title": "TAKE52 — видеосъёмка в Нижнем Новгороде",
         },
     )
+
+YANDEX_VERIFICATION_HTML = """<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>Verification: 5ce173d08fc739d</body>
+</html>"""
+
+
 @app.get("/yandex_5ce173d08fc739d.html", response_class=HTMLResponse)
-async def yandex_verification():
-    return """
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>Verification: 5ce173d08fc739d</body>
-</html>
-"""
+async def yandex_verification_get():
+    return YANDEX_VERIFICATION_HTML
+
+
+@app.head("/yandex_5ce173d08fc739d.html")
+async def yandex_verification_head():
+    return Response(status_code=200, media_type="text/html")
