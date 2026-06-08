@@ -1,74 +1,327 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="/static/style.css">
-</head>
+{% extends "base.html" %}
 
-<body>
-  <main class="page">
-    <header class="header">
-      <div class="logo">TAKE<span>52</span></div>
-      <nav>
-        <a href="#services">Услуги</a>
-        <a href="#portfolio">Портфолио</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-    </header>
+{% block content %}
 
-    <section class="hero">
-      <p class="tag">Видеосъёмка · Нижний Новгород · область</p>
-      <h1>Видео, которое хочется пересмотреть.</h1>
-      <p class="lead">
-        Снимаю свадьбы, выпускные, корпоративы и личные истории.
-        Живо, аккуратно и без ощущения, что вас заставили играть в плохом сериале.
+<section class="hero hero-grid">
+  <div class="hero-content">
+    <p class="tag">TAKE52 · постановочное видео · продуктовые ролики · короткий метр</p>
+
+    <h1>Видео с идеей, атмосферой и постановкой.</h1>
+
+    <p class="lead">
+      Создаю постановочные видео, продуктовые ролики и короткие визуальные истории.
+      Работаю с кадром, светом, движением камеры и монтажом так, чтобы ролик выглядел
+      не случайной съёмкой, а законченным высказыванием.
+    </p>
+
+    <div class="buttons">
+    <div class="buttons">
+      <a class="btn primary" href="#portfolio">Смотреть работы</a>
+      <a class="btn secondary" href="#contacts">Обсудить проект</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="{{ url_for('static', path='img/mascot.png') }}" alt="TAKE52">
+  </div>
+</section>
+
+<section class="section featured-video">
+  <div class="section-heading">
+    <h2>Главный ролик</h2>
+
+    <p class="section-text">
+      Видео, которое лучше всего показывает мой подход:
+      атмосфера, ритм, визуальная идея и внимание к деталям.
+    </p>
+  </div>
+
+  <div class="video-frame">
+    <iframe
+      src="https://vk.com/video_ext.php?oid=84172919&id=456241578&hd=2"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+
+<section id="directions" class="section">
+  <h2>Направления</h2>
+
+  <div class="cards">
+    <article class="card">
+      <h3>Постановочные видео</h3>
+      <p>
+        Сцены с продуманной идеей, светом, движением камеры и настроением.
+        Подходит для имиджевых роликов, творческих проектов и визуальных историй.
       </p>
+    </article>
 
-      <div class="buttons">
-        <a class="btn primary" href="#contacts">Обсудить съёмку</a>
-        <a class="btn secondary" href="#portfolio">Посмотреть работы</a>
-      </div>
-    </section>
+    <article class="card">
+      <h3>Продуктовые ролики</h3>
+      <p>
+        Видео, где продукт не просто показан, а получает характер:
+        фактура, свет, детали, движение и понятный визуальный акцент.
+      </p>
+    </article>
 
-    <section class="grid" id="services">
-      <article class="card">
-        <h2>Свадьбы</h2>
-        <p>Эмоции, атмосфера дня, детали и история пары без лишней постановочности.</p>
-      </article>
+    <article class="card">
+      <h3>Короткий метр</h3>
+      <p>
+        Небольшие истории, сцены и эксперименты с драматургией,
+        атмосферой и киношной подачей.
+      </p>
+    </article>
 
-      <article class="card">
-        <h2>Выпускные</h2>
-        <p>Динамичный ролик про людей, настроение и событие, а не просто отчёт.</p>
-      </article>
+    <article class="card">
+      <h3>Визуальные эксперименты</h3>
+      <p>
+        Тесты света, движения камеры, монтажа, звука и необычных форматов.
+        Пространство для поиска собственного стиля.
+      </p>
+    </article>
+  </div>
+</section>
 
-      <article class="card">
-        <h2>Корпоративы</h2>
-        <p>Съёмка мероприятий, презентаций и командных событий для бизнеса и соцсетей.</p>
-      </article>
-    </section>
 
-    <section class="grid" id="portfolio">
-      <article class="card">
-        <h2>Портфолио</h2>
-        <p>Скоро здесь появятся избранные работы.</p>
-      </article>
+<section class="section about">
+  <h2>Как я работаю</h2>
 
-      <article class="card" id="contacts">
-        <h2>Контакты</h2>
-        <p>Telegram / WhatsApp.</p>
-      </article>
+  <p>
+    Для меня видео начинается не с кнопки записи, а с идеи.
+    Сначала я ищу настроение, ритм и визуальный образ, а уже потом подбираю
+    свет, движение камеры, крупности и монтаж.
+  </p>
 
-      <article class="card">
-        <h2>TAKE52</h2>
-        <p>Видеосъёмка событий, людей и историй в Нижнем Новгороде.</p>
-      </article>
-    </section>
+  <p>
+    Мне интересны проекты, где можно не просто “снять красиво”, а собрать сцену:
+    продумать кадр, управлять вниманием зрителя и сделать ролик цельным.
+  </p>
+</section>
 
-    <footer>
-      © 2026 TAKE52
-    </footer>
-  </main>
-</body>
-</html>
+
+<section id="portfolio" class="section">
+  <h2>Избранные работы</h2>
+
+  <p class="section-text">
+    Несколько работ в разных направлениях: визуальная история, продуктовая съёмка
+    и постановочное видео.
+  </p>
+
+  <div class="portfolio-grid">
+    <article
+      class="portfolio-item"
+      data-video-src="https://vk.com/video_ext.php?oid=84172919&id=456241578&hd=2"
+    >
+      <button class="portfolio-button" type="button">
+        <div class="portfolio-preview">
+          <img src="{{ url_for('static', path='img/portfolio/main-video.webp') }}" alt="Визуальная история">
+          <span>Главный ролик</span>
+        </div>
+
+        <h3>Визуальная история</h3>
+
+        <p>
+          Ролик про атмосферу, ритм и цельную подачу. Хороший пример того,
+          как я собираю кадр, настроение и монтаж в одну историю.
+        </p>
+      </button>
+    </article>
+
+      <article
+        class="portfolio-item"
+        data-video-src="https://vk.com/video_ext.php?oid=84172919&id=456241605&hd=2&list=ln-q5Y40sby94W5OlixV9"
+      >
+      <button class="portfolio-button" type="button">
+        <div class="portfolio-preview">
+          <img src="{{ url_for('static', path='img/portfolio/gorky-vinokyr.webp') }}" alt="Gorky Vinokyr">
+          <span>Продуктовое видео</span>
+        </div>
+
+        <h3>Gorky Vinokyr</h3>
+
+        <p>
+          Продуктовый ролик с акцентом на фактуру, свет, детали и характер
+          объекта в кадре.
+        </p>
+      </button>
+    </article>
+
+      <article
+        class="portfolio-item"
+        data-video-src="https://vk.com/video_ext.php?oid=84172919&id=456241536&hd=2&list=ln-TgxlnAet8PPDCxGz0N"
+      >
+      <button class="portfolio-button" type="button">
+        <div class="portfolio-preview">
+          <img src="{{ url_for('static', path='img/portfolio/photographer.webp') }}" alt="Фотограф">
+          <span>Постановочное видео</span>
+        </div>
+
+        <h3>Фотограф</h3>
+
+        <p>
+          Постановочная работа с настроением, персонажем, светом и атмосферой
+          короткой визуальной сцены.
+        </p>
+      </button>
+    </article>
+  </div>
+</section>
+
+
+<section class="section gear">
+  <h2>Инструменты под задачу</h2>
+
+  <p class="section-text">
+    Использую камеру, свет, звук и движение камеры не ради списка техники,
+    а чтобы управлять атмосферой кадра: от мягкой предметной сцены
+    до контрастного постановочного видео.
+  </p>
+
+  <div class="gear-grid">
+    <article class="gear-card">
+      <h3>Камера и оптика</h3>
+
+      <ul>
+        <li>Sony FX30</li>
+        <li>Sony a6500</li>
+        <li>DJI Osmo Pocket 3</li>
+        <li>Sirui 50 мм Anamorphic</li>
+        <li>Sony 18–105 мм F4</li>
+        <li>Sirui Nightwalker 24 / 55 / 75 мм T1.2</li>
+        <li>Sirui Sniper 16 мм AF F1.2</li>
+        <li>SmallRig Matte Box Lite, ND 4×5.65</li>
+        <li>Pro-Mist и переменный ND</li>
+        <li>Feelworld T6 Plus</li>
+      </ul>
+    </article>
+
+    <article class="gear-card">
+      <h3>Свет</h3>
+
+      <ul>
+        <li>Nanlite FC-60B</li>
+        <li>Nanlite FC-120B</li>
+        <li>Ulanzi 40W RGB Pro</li>
+        <li>Проекционная насадка с gobo</li>
+      </ul>
+    </article>
+
+    <article class="gear-card">
+      <h3>Звук</h3>
+
+      <ul>
+        <li>Zoom H5</li>
+        <li>Петличные микрофоны Godox</li>
+        <li>Радиомикрофон Comica VM30</li>
+      </ul>
+    </article>
+
+    <article class="gear-card">
+      <h3>Грип и движение</h3>
+
+      <ul>
+        <li>Zhiyun Crane 2</li>
+        <li>Tilta Nucleus Nano II</li>
+        <li>Shimbol TP Max</li>
+        <li>Слайдер GVM 80</li>
+        <li>Штативы</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+
+<section id="contacts" class="section contacts">
+  <h2>Связаться</h2>
+
+  <p class="section-text">
+    Если у вас есть продукт, идея, сцена или история, которую хочется превратить
+    в видео, напишите мне. Обсудим задачу, формат, настроение и реалистичный
+    объём съёмки.
+  </p>
+
+  <div class="contact-actions">
+    <a class="btn primary" href="https://vk.com/vladimer_52" target="_blank" rel="noopener">
+      Написать ВКонтакте
+    </a>
+
+      <a class="btn secondary" href="https://www.youtube.com/channel/UClobADS0N1cvWOp8epUqdVA" target="_blank" rel="noopener">
+    YouTube
+  </a>
+
+    <a class="btn secondary" href="mailto:vladimer52@cinehere.ru">
+      vladimer52@cinehere.ru
+    </a>
+  </div>
+</section>
+
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal-backdrop" data-video-close></div>
+
+  <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Просмотр видео">
+    <button class="video-modal-close" type="button" data-video-close>
+      ×
+    </button>
+
+    <div class="video-modal-frame">
+      <iframe
+        id="videoModalIframe"
+        src=""
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("videoModal");
+  const iframe = document.getElementById("videoModalIframe");
+  const portfolioItems = document.querySelectorAll(".portfolio-item[data-video-src]");
+  const closeButtons = document.querySelectorAll("[data-video-close]");
+
+  function addAutoplay(videoSrc) {
+    const separator = videoSrc.includes("?") ? "&" : "?";
+
+    if (videoSrc.includes("autoplay=1")) {
+      return videoSrc;
+    }
+
+    return `${videoSrc}${separator}autoplay=1`;
+  }
+
+  function openVideoModal(videoSrc) {
+    iframe.src = addAutoplay(videoSrc);
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeVideoModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    iframe.src = "";
+  }
+
+  portfolioItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      openVideoModal(item.dataset.videoSrc);
+    });
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeVideoModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeVideoModal();
+    }
+  });
+</script>
+
+{% endblock %}
