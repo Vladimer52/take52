@@ -29,7 +29,7 @@ async def index(request: Request):
         },
     )
     
-@app.get("/mascot.ico", include_in_schema=False)
+@app.api_route("/favicon.ico", methods=["GET", "HEAD"], include_in_schema=False)
 async def favicon():
     return FileResponse(BASE_DIR / "static" / "img" / "mascot.ico")    
     
