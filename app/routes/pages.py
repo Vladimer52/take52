@@ -17,3 +17,19 @@ async def index(request: Request):
             "version": "2",
         },
     )
+    
+@router.get("/vladimer52", response_class=HTMLResponse)
+async def vladimer52(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="vladimer52.html",
+        context={
+            "title": "Vladimer52 — Владимир Макаров, видеограф TAKE52",
+            "description": (
+                "Vladimer52 — творческий ник Владимира Макарова, видеографа TAKE52 "
+                "из Нижнего Новгорода. Видеосъёмка свадеб, корпоративов, выпускных, "
+                "продуктовых роликов и визуальных историй."
+            ),
+            "version": "2",
+        },
+    )
